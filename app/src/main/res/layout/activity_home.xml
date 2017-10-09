@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/recyclerView"
+    app:layoutManager="android.support.v7.widget.LinearLayoutManager"
     tools:context="com.hpdeveloper.kotlinsample.activities.HomeActivity">
 
 </android.support.v7.widget.RecyclerView>

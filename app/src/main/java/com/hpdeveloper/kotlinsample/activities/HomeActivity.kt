@@ -2,7 +2,6 @@ package com.hpdeveloper.kotlinsample.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
 import com.hpdeveloper.kotlinsample.R
 import com.hpdeveloper.kotlinsample.adapters.UserRecyclerAdapter
 import com.hpdeveloper.kotlinsample.entities.User
@@ -13,8 +12,6 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-
-        recyclerView.layoutManager = LinearLayoutManager(this)
 
         val users = ArrayList<User>()
         users.add(User("Hiren", "Ahmedabad"))
