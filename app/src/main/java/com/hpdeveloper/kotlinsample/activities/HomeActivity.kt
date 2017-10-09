@@ -21,7 +21,6 @@ class HomeActivity : AppCompatActivity() {
         users.add(User("Sagar", "Visnagar"))
         users.add(User("Pushp", "Rajkot"))
 
-
         val userAdapter = UserRecyclerAdapter(users)
         recyclerView.adapter = userAdapter
     }
