@@ -17,14 +17,12 @@ class UserRecyclerAdapter(val userList: ArrayList<User>, val listener: UserSelec
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         holder.bindItems(userList[position])
     }
-
     override fun getItemCount(): Int = userList.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
         return UserViewHolder(v, listener);
     }
-
     class UserViewHolder(itemView: View, val listener: UserSelection) : RecyclerView.ViewHolder(itemView) {
         fun bindItems(user: User) {
             itemView.textViewUsername.text = user.name;

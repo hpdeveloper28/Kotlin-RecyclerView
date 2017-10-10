@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.hpdeveloper.kotlinsample.R
 import com.hpdeveloper.kotlinsample.adapters.UserRecyclerAdapter
+import com.hpdeveloper.kotlinsample.entities.MathsEntity
 import com.hpdeveloper.kotlinsample.entities.User
 import com.hpdeveloper.kotlinsample.interfaces.UserSelection
 import kotlinx.android.synthetic.main.activity_home.*
@@ -13,9 +14,7 @@ class HomeActivity : BaseActivity(), UserSelection {
         Toast.makeText(this, user.name, Toast.LENGTH_SHORT).show()
     }
 
-    override fun getLayout(): Int {
-        return R.layout.activity_home;
-    }
+    override fun getLayout(): Int = R.layout.activity_home
 
     override fun activityOnCreate(savedInstanceState: Bundle?) {
 
@@ -29,7 +28,17 @@ class HomeActivity : BaseActivity(), UserSelection {
 
         val userAdapter = UserRecyclerAdapter(users, this)
         recyclerView.adapter = userAdapter
+
+        sumTwoNums();
     }
+
+    /**
+     * Call entity function by creating new function
+     */
+    private fun sumTwoNums() {
+        MathsEntity().sum(3, 4)
+    }
+
 
 }
 
