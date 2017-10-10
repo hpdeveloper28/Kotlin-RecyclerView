@@ -1,12 +1,18 @@
 package com.hpdeveloper.kotlinsample.activities
 
 import android.os.Bundle
+import android.widget.Toast
 import com.hpdeveloper.kotlinsample.R
 import com.hpdeveloper.kotlinsample.adapters.UserRecyclerAdapter
 import com.hpdeveloper.kotlinsample.entities.User
+import com.hpdeveloper.kotlinsample.interfaces.UserSelection
 import kotlinx.android.synthetic.main.activity_home.*
 
-class HomeActivity : BaseActivity(){
+class HomeActivity : BaseActivity(), UserSelection {
+    override fun onUserSelected(user: User) {
+        Toast.makeText(this, user.name, Toast.LENGTH_SHORT).show()
+    }
+
     override fun getLayout(): Int {
         return R.layout.activity_home;
     }
@@ -21,7 +27,10 @@ class HomeActivity : BaseActivity(){
         users.add(User("Sagar", "Visnagar"))
         users.add(User("Pushp", "Rajkot"))
 
-        val userAdapter = UserRecyclerAdapter(users)
+        val userAdapter = UserRecyclerAdapter(users, this)
         recyclerView.adapter = userAdapter
     }
+
 }
+
+
